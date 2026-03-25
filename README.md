@@ -61,26 +61,26 @@ Scheduler Agent
 ↓
 Frontend UI (Flask)
 
-## 📂 Project Structure
 
-social-media-agent/
-│
-├── app.py
-├── .env
-├── requirements.txt
-│
-├── agents/
-│   ├── caption_agent.py
-│   ├── hashtag_agent.py
-│   ├── music_agent.py
-│   └── scheduler_agent.py
-│
-├── utils/
-│   ├── gemini_api.py
-│   └── video_processor.py
-│
-├── templates/
-│   └── index.html
-│
-└── static/
-    └── uploads/
+
+## 🚧 Limitations
+Video analysis is based on extracted frames
+No direct auto-posting (API restrictions)
+Depends on API usage limits
+
+## 🔮 Future Enhancements
+📅 Content calendar
+📊 Analytics dashboard
+🤖 Auto-posting integration
+🌍 Multi-language support
+🎨 AI-generated images
+
+## 🎯 Use Cases
+Content creators
+Influencers
+Digital marketers
+Small businesses
+
+## 🏁 Conclusion
+
+This project demonstrates how AI can automate creative workflows and generate complete social media content from simple media inputs.
