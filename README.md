@@ -47,40 +47,25 @@ Upload Media → Video Frame Extraction → AI Analysis → Content Generation �
 
 ---
 
-## 🧩 Architecture
-User Input
-↓
-Media Processing (Image / Video)
-↓
-AI Agents:
-
-Caption Agent
-Hashtag Agent
-Music Agent
-Scheduler Agent
-↓
-Frontend UI (Flask)
-
-
 
 ## 🚧 Limitations
-Video analysis is based on extracted frames
-No direct auto-posting (API restrictions)
-Depends on API usage limits
-
+- Video analysis is based on extracted frames
+- No direct auto-posting (API restrictions)
+- Depends on API usage limits
+---
 ## 🔮 Future Enhancements
-📅 Content calendar
-📊 Analytics dashboard
-🤖 Auto-posting integration
-🌍 Multi-language support
-🎨 AI-generated images
-
+- 📅 Content calendar
+- 📊 Analytics dashboard
+- 🤖 Auto-posting integration
+- 🌍 Multi-language support
+- 🎨 AI-generated images
+---
 ## 🎯 Use Cases
-Content creators
-Influencers
-Digital marketers
-Small businesses
-
+- Content creators
+- Influencers
+- Digital marketers
+- Small businesses
+---
 ## 🏁 Conclusion
 
-This project demonstrates how AI can automate creative workflows and generate complete social media content from simple media inputs.
+-This project demonstrates how AI can automate creative workflows and generate complete social media content from simple media inputs.
