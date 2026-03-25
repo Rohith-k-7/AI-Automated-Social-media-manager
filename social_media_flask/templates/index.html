@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Social Media Manager</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: #fff;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    padding: 20px 40px;
+    background: #020617;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    font-size: 22px;
+}
+
+.navbar span {
+    color: #38bdf8;
+}
+
+/* MAIN */
+.main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* UPLOAD BOX */
+.upload {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #334155;
+}
+
+.upload input {
+    margin-top: 15px;
+}
+
+.upload button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    background: #38bdf8;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* CARD */
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #38bdf8;
+}
+
+img, video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* LIST */
+ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* HASHTAG CHIPS */
+.tags li {
+    display: inline-block;
+    background: #334155;
+    padding: 6px 10px;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+/* LINKS */
+.links a {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    background: #38bdf8;
+    border-radius: 8px;
+    text-decoration: none;
+    color: black;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <h1> AI <span>Social Media Manager</span></h1>
+    <p>Powered by AI</p>
+</div>
+
+<div class="main">
+
+<form method="POST" enctype="multipart/form-data" class="upload">
+    <h2>Upload Image or Video</h2>
+    <input type="file" name="image" accept="image/*,video/*" required>
+    <br>
+    <button type="submit">Generate Campaign</button>
+</form>
+
+{% if image %}
+
+<div class="grid">
+
+<div class="card">
+    <h2>📂 Media</h2>
+
+    {% if image.endswith('.mp4') or image.endswith('.mov') or image.endswith('.avi') %}
+        <video controls>
+            <source src="{{ image }}">
+        </video>
+    {% else %}
+        <img src="{{ image }}">
+    {% endif %}
+</div>
+
+<div class="card">
+    <h2>📢 Caption</h2>
+    <ul>
+        {% for line in caption.split('\n') %}
+            {% if line.strip() %}
+                <li>{{ line }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="card">
+    <h2>#️⃣ Hashtags</h2>
+    <ul class="tags">
+        {% for line in hashtags.split('\n') %}
+            {% if line.strip() %}
+                <li>{{ line }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="card">
+    <h2>🎵 Music</h2>
+    <ul>
+        {% for line in music.split('\n') %}
+            {% if line.strip() %}
+                <li>{{ line }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="card">
+    <h2>⏰ Schedule</h2>
+    <ul>
+        {% for line in schedule.split('\n') %}
+            {% if line.strip() %}
+                <li>{{ line }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="card links">
+    <h2>🌐 Post</h2>
+    <a href="https://x.com/compose/post">X</a>
+    <a href="https://www.instagram.com/">Instagram</a>
+    <a href="https://www.facebook.com/">Facebook</a>
+    <a href="https://www.linkedin.com/feed/">LinkedIn</a>
+</div>
+
+</div>
+
+{% endif %}
+
+<div class="footer">
+    <p>AI-powered content generation system</p>
+</div>
+
+</div>
+
+</body>
+</html>
